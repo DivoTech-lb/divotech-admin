@@ -1,0 +1,456 @@
+:root {
+  --bg: #f6f5fb;
+  --surface: #ffffff;
+  --border: #e6e3f0;
+  --text: #16151f;
+  --muted: #6b6880;
+  --accent: #5b3fd6;
+  --accent-hover: #4a30b8;
+  --danger: #e5484d;
+  --success: #16a34a;
+  --brand-dark: #240e4a;
+  --brand-dark-soft: #34196a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+}
+
+.center-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 24px rgba(20, 20, 43, 0.06);
+}
+
+.card h1 {
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.field input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: #fafbfd;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.field input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  background: #fff;
+}
+
+button.primary {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+button.primary:hover { background: var(--accent-hover); }
+button.primary:disabled { opacity: 0.6; cursor: default; }
+
+.error-text {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.dashboard {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.dashboard h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.dashboard .subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.business-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.business-card {
+  display: block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(20, 20, 43, 0.04);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.business-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(79, 94, 255, 0.12);
+}
+
+.menu-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.save-row {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.save-row button {
+  padding: 0.65rem 1.4rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.save-row button:hover { background: var(--accent-hover); }
+
+.saved-msg {
+  color: var(--success);
+  font-size: 0.9rem;
+}
+
+.schema-form .field {
+  margin-bottom: 1rem;
+}
+
+.schema-form .field label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.schema-form .field input,
+.schema-form .field textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: #fafbfd;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.schema-form .field input:focus,
+.schema-form .field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  background: #fff;
+}
+
+.list-field {
+  margin-bottom: 1.5rem;
+}
+
+.list-field > label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.list-item {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 0.85rem;
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(20, 20, 43, 0.03);
+}
+
+.remove-btn {
+  background: transparent;
+  border: 1px solid var(--danger);
+  color: var(--danger);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover { background: #fef2f2; }
+
+.add-btn {
+  background: transparent;
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.add-btn:hover { background: #f2f3ff; }
+
+.group-field {
+  margin-bottom: 1rem;
+}
+
+.group-field > label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.group-box {
+  display: flex;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+  background: #fafbfd;
+}
+
+.group-box .schema-form {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.group-box .field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+/* ---------- Brand header ---------- */
+
+.brand-header {
+  background: var(--brand-dark);
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  border-radius: 6px;
+}
+
+.brand-breadcrumb {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+}
+
+.brand-logout {
+  margin-left: auto;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.brand-logout:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Landing page ---------- */
+
+.landing-hero {
+  background: linear-gradient(160deg, var(--brand-dark) 0%, var(--brand-dark-soft) 100%);
+  padding: 5rem 1.5rem 6rem;
+  text-align: center;
+  color: #fff;
+}
+
+.landing-hero .brand-logo-large {
+  height: 64px;
+  width: auto;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.landing-hero h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.landing-hero p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+}
+
+.landing-cta {
+  display: inline-block;
+  background: #fff;
+  color: var(--brand-dark);
+  font-weight: 600;
+  padding: 0.8rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.landing-cta:hover {
+  background: #f0eefc;
+}
+
+.landing-features {
+  max-width: 900px;
+  margin: -3rem auto 4rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  position: relative;
+}
+
+.landing-feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 12px 32px rgba(36, 14, 74, 0.08);
+}
+
+.landing-feature-card .icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.landing-feature-card h3 {
+  font-size: 1.05rem;
+  margin: 0 0 0.5rem;
+}
+
+.landing-feature-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.landing-how {
+  max-width: 720px;
+  margin: 0 auto 5rem;
+  padding: 0 1.5rem;
+}
+
+.landing-how h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.landing-step {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.landing-step .num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.landing-step h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.landing-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.landing-footer {
+  background: var(--brand-dark);
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  font-size: 0.85rem;
+}
+
+.landing-footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.landing-footer .footer-links {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+}
