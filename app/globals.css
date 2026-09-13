@@ -314,10 +314,42 @@ button.primary:disabled { opacity: 0.6; cursor: default; }
 
 .list-item-chevron {
   flex: none;
-  width: 1rem;
-  text-align: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
   color: var(--muted);
-  font-size: 0.8rem;
+  transition: transform 200ms ease, background 150ms, border-color 150ms, color 150ms;
+}
+
+.list-item-header:hover .list-item-chevron {
+  background: var(--surface);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.list-item-trash-btn {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--danger);
+  cursor: pointer;
+  transition: background 150ms, border-color 150ms;
+}
+
+.list-item-trash-btn:hover {
+  background: #fef2f2;
+  border-color: var(--danger);
 }
 
 .list-item-body {

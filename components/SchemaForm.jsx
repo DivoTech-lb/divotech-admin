@@ -256,17 +256,28 @@ function ListField({ field, items, onChange, businessId }) {
 
         return (
           <div className="list-item" key={index}>
-            <div className="list-item-header" onClick={() => toggleExpanded(index)}>
+                        <div className="list-item-header" onClick={() => toggleExpanded(index)}>
               <span className="list-item-label">{label}</span>
               {count && <span className="list-item-count">{count}</span>}
               <button
                 type="button"
-                className="remove-btn"
+                className="list-item-trash-btn"
+                aria-label="Remove item"
                 onClick={(e) => { e.stopPropagation(); removeItem(index); }}
               >
-                Remove
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="3 6 5 6 21 6" />
+                  <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                  <path d="M10 11v6" />
+                  <path d="M14 11v6" />
+                  <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2" />
+                </svg>
               </button>
-              <span className="list-item-chevron">{isOpen ? '▾' : '▸'}</span>
+              <span className="list-item-chevron" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }}>
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="9 6 15 12 9 18" />
+                </svg>
+              </span>
             </div>
 
             {isOpen && (
