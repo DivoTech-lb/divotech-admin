@@ -117,7 +117,7 @@ export default function BusinessAdminPage() {
         <h1>{businessName}</h1>
         <p className="subtitle">Edit your info below, then save — this updates the live site.</p>
 
-        <SchemaForm schema={schema} data={content} onChange={setContent} businessId={businessId} />
+        <SchemaForm schema={schema} data={content} onChange={setContent} businessId={businessId} topLevel />
 
         <div className="save-row">
           <button onClick={handleSave} disabled={saving}>

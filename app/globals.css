@@ -110,6 +110,63 @@ button.primary:disabled { opacity: 0.6; cursor: default; }
   margin-bottom: 2rem;
 }
 
+.schema-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  background: var(--bg);
+  padding: 0.75rem 0 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  scrollbar-width: thin;
+}
+
+.schema-nav-pill {
+  flex: none;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.schema-nav-pill:hover {
+  border-color: var(--accent);
+}
+
+.schema-nav-pill.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.schema-section {
+  scroll-margin-top: 72px;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.schema-section:last-child {
+  border-bottom: none;
+}
+
+.schema-section > .group-field > label,
+.schema-section > .list-field > label {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
 .business-list {
   display: flex;
   flex-direction: column;
@@ -142,10 +199,19 @@ button.primary:disabled { opacity: 0.6; cursor: default; }
 }
 
 .save-row {
+  position: sticky;
+  bottom: 0;
   margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 12px rgba(20, 20, 43, 0.06);
   display: flex;
   align-items: center;
   gap: 1rem;
+  z-index: 15;
 }
 
 .save-row button {
@@ -209,10 +275,55 @@ button.primary:disabled { opacity: 0.6; cursor: default; }
 .list-item {
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 1rem;
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.6rem;
   background: var(--surface);
   box-shadow: 0 1px 4px rgba(20, 20, 43, 0.03);
+  overflow: hidden;
+}
+
+.list-item-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.list-item-header:hover {
+  background: var(--bg);
+}
+
+.list-item-label {
+  flex: 1;
+  font-weight: 500;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-item-count {
+  flex: none;
+  font-size: 0.75rem;
+  color: var(--muted);
+  background: var(--bg);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.list-item-chevron {
+  flex: none;
+  width: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.list-item-body {
+  padding: 0 1rem 1rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.85rem;
 }
 
 .remove-btn {
@@ -262,15 +373,22 @@ button.primary:disabled { opacity: 0.6; cursor: default; }
 
 .group-box .schema-form {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.75rem;
   flex: 1;
 }
 
 .group-box .field {
-  flex: 1;
+  flex: 1 1 160px;
+  min-width: 160px;
   margin-bottom: 0;
 }
 
+.group-box .list-field,
+.group-box .group-field {
+  flex: 1 1 100%;
+  margin-bottom: 0.75rem;
+}
 /* ---------- Brand header ---------- */
 
 .brand-header {
