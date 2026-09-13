@@ -17,17 +17,17 @@ export default function LandingPage() {
 
       <div className="landing-features">
         <div className="landing-feature-card">
-          <div className="icon">⚡</div>
+          <div className="icon">1</div>
           <h3>Instant updates</h3>
           <p>Change a price or add a photo, hit save, and your live site updates within seconds — no waiting, no developer needed.</p>
         </div>
         <div className="landing-feature-card">
-          <div className="icon">🔒</div>
+          <div className="icon">2</div>
           <h3>Only you can edit it</h3>
           <p>Your dashboard is private to your account — nobody else can see or change your business's content.</p>
         </div>
         <div className="landing-feature-card">
-          <div className="icon">🖼️</div>
+          <div className="icon">3</div>
           <h3>Add your own photos</h3>
           <p>Upload photos straight from your phone or computer — they show up on your site automatically.</p>
         </div>
